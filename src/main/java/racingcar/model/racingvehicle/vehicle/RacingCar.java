@@ -13,10 +13,14 @@ public class RacingCar implements RacingVehicle{
     private final ForwardDistance distance;
     private final Accelerator accelerator;
 
-    public RacingCar(CarName carName, ForwardDistance distance) {
+    public RacingCar(CarName carName, ForwardDistance distance, Accelerator accelerator) {
         this.carName = carName;
         this.distance = distance;
-        this.accelerator = new Accelerator();
+        this.accelerator = accelerator;
+    }
+
+    public RacingCar(CarName carName, ForwardDistance distance) {
+        this(carName, distance, new Accelerator());
     }
 
     public Report race() {
