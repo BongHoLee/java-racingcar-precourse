@@ -3,7 +3,7 @@ package racingcar.model.report;
 import racingcar.model.racingvehicle.wrapper.CarName;
 import racingcar.model.racingvehicle.wrapper.ForwardDistance;
 
-public class RecordReport {
+public class RecordReport implements Report{
 
     private static final String COLON = " : ";
     private final CarName carName;

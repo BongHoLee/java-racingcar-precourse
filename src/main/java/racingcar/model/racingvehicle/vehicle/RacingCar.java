@@ -1,12 +1,13 @@
-package racingcar.model.racingvehicle;
+package racingcar.model.racingvehicle.vehicle;
 
 import racingcar.model.accelerator.Accelerator;
 import racingcar.model.racingvehicle.wrapper.CarName;
 import racingcar.model.racingvehicle.wrapper.ForwardDistance;
 import racingcar.model.report.RecordReport;
+import racingcar.model.report.Report;
 import racingcar.status.MovementStatus;
 
-public class RacingCar {
+public class RacingCar implements RacingVehicle{
 
     private final CarName carName;
     private final ForwardDistance distance;
@@ -18,7 +19,7 @@ public class RacingCar {
         this.accelerator = new Accelerator();
     }
 
-    public RecordReport race() {
+    public Report race() {
         hitAccelerator();
         return new RecordReport(carName, distance);
     }
