@@ -1,13 +1,26 @@
 package racingcar.model.accelerator;
 
+import camp.nextstep.edu.missionutils.Randoms;
 import racingcar.status.MovementStatus;
 
 public class Accelerator {
-    public MovementStatus hit(AcceleratorLevel acceleratorLevel) {
-       if (acceleratorLevel.canMoveForward()) {
-           return MovementStatus.FORWARD;
-       }
+    private static final int MIN_LEVEL = 0;
+    private static final int MAX_LEVE = 9;
 
-       return MovementStatus.NONE;
+    public MovementStatus hit() {
+        if (canMoveForward()) {
+            return MovementStatus.FORWARD;
+        }
+
+        return MovementStatus.NONE;
     }
+
+    private boolean canMoveForward() {
+        return hitLevel().canMoveForward();
+    }
+
+    private AcceleratorLevel hitLevel() {
+        return new AcceleratorLevel(Randoms.pickNumberInRange(MIN_LEVEL, MAX_LEVE));
+    }
+
 }

@@ -8,7 +8,8 @@ public class ForwardDistance {
         currentDistance.append(PER_DISTANCE);
     }
 
-    public String currentDistance() {
+    @Override
+    public String toString() {
         return currentDistance.toString();
     }
 }

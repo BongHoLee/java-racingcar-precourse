@@ -24,4 +24,9 @@ public class CarName {
     private boolean isLongerThanMaxLength(String carName) {
         return carName.length() > MAX_LENGTH || carName.length() < MIN_LENGTH;
     }
+
+    @Override
+    public String toString() {
+        return this.carName;
+    }
 }
