@@ -11,7 +11,7 @@ public class RecordReportsTest {
     private RecordReports reports = new RecordReports();
 
     @Test
-    @DisplayName("한 명에 대한 report 테스트")
+    @DisplayName("자동차 한 대에 대한 report 테스트")
     void lee_한번_전진_테스트() {
         String expected = "lee : -\n";
 
@@ -24,7 +24,7 @@ public class RecordReportsTest {
     }
 
     @Test
-    @DisplayName("두 명에 대한 report 테스트")
+    @DisplayName("자동차 두 대에 대한 report 테스트")
     void lee_한번_전진_kim_두번_전진_테스트() {
         String expected = "lee : -\nkim : --\n";
 

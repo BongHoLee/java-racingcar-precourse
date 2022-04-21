@@ -1,7 +1,8 @@
 package racingcar.model.racingvehicle.wrapper;
 
+import racingcar.error.Error;
+
 public class CarName {
-    private static final String NOT_VALID_NAME = "[ERROR] 유효하지 않은 이름입니다. 다시 입력해주세요.";
     private static final int MAX_LENGTH = 5;
     private static final int MIN_LENGTH = 1;
     private final String carName;
@@ -13,7 +14,7 @@ public class CarName {
 
     private void validationCheck(String carName) {
         if (isNull(carName) || isLongerThanMaxLength(carName)) {
-            throw new IllegalArgumentException(NOT_VALID_NAME);
+            throw new IllegalArgumentException(Error.NOT_VALID_CAR_NAME.message());
         }
     }
 
