@@ -12,7 +12,8 @@ public class ForwardDistanceTest {
     void 전진_안한경우_DISTANCE_길이는_0() {
         ForwardDistance distance = new ForwardDistance();
         forwardForCount(distance, 0);
-        assertThat(distance).isEqualTo("");
+        assertThat(String.valueOf(distance)).isEqualTo("");
+
     }
 
     @Test
@@ -20,7 +21,7 @@ public class ForwardDistanceTest {
     void 두_번_전진시_DISTANCE_길이는_2() {
         ForwardDistance distance = new ForwardDistance();
         forwardForCount(distance, 2);
-        assertThat(distance).isEqualTo("--");
+        assertThat(String.valueOf(distance)).isEqualTo("--");
     }
 
 
@@ -29,7 +30,7 @@ public class ForwardDistanceTest {
     void 다섯_번_전진시_DISTANCE_길이는_5() {
         ForwardDistance distance = new ForwardDistance();
         forwardForCount(distance, 5);
-        assertThat(distance).isEqualTo("-----");
+        assertThat(String.valueOf(distance)).isEqualTo("-----");
     }
 
     private void forwardForCount(ForwardDistance distance, int count) {
