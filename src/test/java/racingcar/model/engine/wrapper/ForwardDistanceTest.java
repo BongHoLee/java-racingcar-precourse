@@ -1,9 +1,10 @@
-package racingcar.model.racingvehicle.wrapper;
+package racingcar.model.engine.wrapper;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import racingcar.model.engine.wrapper.ForwardDistance;
 
 public class ForwardDistanceTest {
 
@@ -23,7 +24,6 @@ public class ForwardDistanceTest {
         forwardForCount(distance, 2);
         assertThat(String.valueOf(distance)).isEqualTo("--");
     }
-
 
     @Test
     @DisplayName("다섯 번 전진 시 ----- ")

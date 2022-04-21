@@ -4,7 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racingcar.model.racingvehicle.wrapper.CarName;
-import racingcar.model.racingvehicle.wrapper.ForwardDistance;
+import racingcar.model.engine.wrapper.ForwardDistance;
 
 public class RecordReportsTest {
 
