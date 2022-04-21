@@ -1,37 +1,36 @@
 package racingcar.model.racingvehicle.vehicle;
 
-import racingcar.model.accelerator.Accelerator;
+import camp.nextstep.edu.missionutils.Randoms;
+import racingcar.model.engine.Engine;
+import racingcar.model.engine.Rpm;
 import racingcar.model.racingvehicle.wrapper.CarName;
-import racingcar.model.racingvehicle.wrapper.ForwardDistance;
+import racingcar.model.engine.wrapper.ForwardDistance;
 import racingcar.model.report.RecordReport;
 import racingcar.model.report.Report;
-import racingcar.status.MovementStatus;
 
-public class RacingCar implements RacingVehicle{
+public class RacingCar implements RacingVehicle {
 
     private final CarName carName;
-    private final ForwardDistance distance;
-    private final Accelerator accelerator;
+    private final Engine engine;
 
-    public RacingCar(CarName carName, ForwardDistance distance, Accelerator accelerator) {
+    public RacingCar(CarName carName, Engine engine) {
         this.carName = carName;
-        this.distance = distance;
-        this.accelerator = accelerator;
-    }
-
-    public RacingCar(CarName carName, ForwardDistance distance) {
-        this(carName, distance, new Accelerator());
+        this.engine = engine;
     }
 
     public Report race() {
-        hitAccelerator();
-        return new RecordReport(carName, distance);
+        return new RecordReport(carName, hitRpm());
     }
 
-    private void hitAccelerator() {
-        MovementStatus hit = accelerator.hit();
-        if (hit.isForward()) {
-            distance.increase();
-        }
+    private ForwardDistance hitRpm() {
+        return engine.hit(rpm());
+    }
+
+    private Rpm rpm() {
+        return new Rpm(
+                Randoms.pickNumberInRange(
+                        Rpm.MaxRpmLevel(),
+                        Rpm.MinRpmLevel()
+                ));
     }
 }

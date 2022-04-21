@@ -3,13 +3,9 @@ package racingcar.model.report;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecordReports implements Report{
+public class RecordReports implements Report {
     private static final String NEXT_LINE = "\n";
     private final List<Report> reports = new ArrayList<>();
-
-    public void addReport(Report report) {
-        this.reports.add(report);
-    }
 
     @Override
     public String report() {
@@ -26,5 +22,9 @@ public class RecordReports implements Report{
         }
 
         return summeryReport.toString();
+    }
+
+    public void addReport(Report report) {
+        reports.add(report);
     }
 }

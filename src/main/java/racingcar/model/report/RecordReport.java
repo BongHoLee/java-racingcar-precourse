@@ -1,7 +1,7 @@
 package racingcar.model.report;
 
 import racingcar.model.racingvehicle.wrapper.CarName;
-import racingcar.model.racingvehicle.wrapper.ForwardDistance;
+import racingcar.model.engine.wrapper.ForwardDistance;
 
 public class RecordReport implements Report{
 

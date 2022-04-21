@@ -1,14 +1,12 @@
-package racingcar.model.accelerator;
+package racingcar.model.engine;
 
-public class AcceleratorLevel {
+public class Rpm {
     private static final int MAX_LEVEL = 9;
     private static final int MIN_LEVEL = 0;
-    private static final int CAN_MOVE_MIN_LEVEL = 4;
-    private static final int CAN_MOVE_MAX_LEVEL = 9;
     private static final String NOT_VALID_LEVEL_MESSAGE = "[ERROR] Accelerator Level은 0 ~ 9사이의 숫자만 가능합니다.";
     private final int level;
 
-    public AcceleratorLevel(int level) {
+    public Rpm(int level) {
         validationCheck(level);
         this.level = level;
     }
@@ -19,7 +17,15 @@ public class AcceleratorLevel {
         }
     }
 
-    public boolean canMoveForward() {
-        return CAN_MOVE_MAX_LEVEL >= level && CAN_MOVE_MIN_LEVEL <= level;
+    public static int MaxRpmLevel() {
+        return MAX_LEVEL;
+    }
+
+    public static int MinRpmLevel() {
+        return MIN_LEVEL;
+    }
+
+    public int level() {
+        return this.level;
     }
 }

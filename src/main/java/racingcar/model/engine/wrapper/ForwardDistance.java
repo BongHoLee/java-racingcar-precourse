@@ -1,4 +1,4 @@
-package racingcar.model.racingvehicle.wrapper;
+package racingcar.model.engine.wrapper;
 
 public class ForwardDistance {
     private static final String PER_DISTANCE = "-";
