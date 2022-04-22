@@ -50,7 +50,7 @@ public class LineUpTest {
         extractFromLineup(lineup.split(",").length);
 
         IllegalStateException e = assertThrows(IllegalStateException.class, () -> lineUp.next());
-        assertThat(e.getMessage()).isEqualTo(Error.HAS_NOT_NEXT.message());
+        assertThat(e.getMessage()).isEqualTo(Error.HAS_NOT_NEXT_LINEUP.message());
     }
 
     private void extractFromLineup(int count) {

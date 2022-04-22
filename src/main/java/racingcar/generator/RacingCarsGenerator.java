@@ -1,4 +1,4 @@
-package racingcar.model.racingvehicle.factory;
+package racingcar.generator;
 
 import camp.nextstep.edu.missionutils.Console;
 import java.util.ArrayList;
@@ -11,9 +11,9 @@ import racingcar.model.racingvehicle.wrapper.CarName;
 import racingcar.model.racingvehicle.wrapper.LineUp;
 import racingcar.view.Display;
 
-public class RacingCarsFactory {
+public class RacingCarsGenerator {
 
-    public static RacingCars create() {
+    public static RacingCars generate() {
         RacingCars racingCars = null;
         while (racingCars == null) {
             racingCars = createRacingCars();

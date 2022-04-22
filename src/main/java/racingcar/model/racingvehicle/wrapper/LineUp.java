@@ -18,7 +18,7 @@ public class LineUp {
 
     public String next() {
         if (!hasNext()) {
-            throw new IllegalStateException(Error.HAS_NOT_NEXT.message());
+            throw new IllegalStateException(Error.HAS_NOT_NEXT_LINEUP.message());
         }
 
         return lineupNames[CUR_INDEX++];
