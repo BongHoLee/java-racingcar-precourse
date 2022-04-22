@@ -9,6 +9,17 @@ import racingcar.model.engine.wrapper.ForwardDistance;
 public class RecordReportTest {
 
     @Test
+    @DisplayName("자동차 이름이 lee, 한 번도 전진 안했을 시 => lee : ")
+    void 자동차이름이_lee이고_한번도_전진하지않은경우_정상출력_테스트() {
+        String expected = "lee : ";
+        CarName carName = nameOf("lee");
+        ForwardDistance distance = nCountDistance(0);
+
+        RecordReport report = new RecordReport(carName, distance);
+        Assertions.assertThat(report.report()).isEqualTo(expected);
+    }
+
+    @Test
     @DisplayName("자동차 이름이 lee, 한 번 전진 시 => lee : -")
     void 자동차이름이_lee이고_한번_전진한경우_정상출력_테스트() {
         String expected = "lee : -";

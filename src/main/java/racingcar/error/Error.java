@@ -6,6 +6,7 @@ public enum Error {
     HAS_NOT_NEXT("[ERROR] 모든 LineUp이 배정되었습니다.");
 
     private final String message;
+
     Error(String message) {
         this.message = message;
     }

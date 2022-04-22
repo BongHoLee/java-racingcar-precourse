@@ -29,8 +29,8 @@ public class RacingCar implements RacingVehicle {
     private Rpm rpm() {
         return new Rpm(
                 Randoms.pickNumberInRange(
-                        Rpm.MaxRpmLevel(),
-                        Rpm.MinRpmLevel()
+                        Rpm.MinRpmLevel(),
+                        Rpm.MaxRpmLevel()
                 ));
     }
 }
