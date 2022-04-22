@@ -1,31 +1,31 @@
 package racingcar.model.racingvehicle.vehicle;
 
 import java.util.List;
-import racingcar.model.report.RecordReports;
-import racingcar.model.report.Report;
+import racingcar.model.record.Record;
+import racingcar.model.record.RecordReport;
+import racingcar.model.record.Records;
 
-public class RacingCars implements RacingVehicle{
-    private final List<RacingVehicle> vehicles;
+public class RacingCars {
+    private final List<RacingCar> racingCars;
 
-    public RacingCars(List<RacingVehicle> vehicles) {
-        this.vehicles = vehicles;
+    public RacingCars(List<RacingCar> racingCars) {
+        this.racingCars = racingCars;
     }
 
-    @Override
-    public Report race() {
+    public Records race() {
         return raceSummaryReport();
     }
 
-    private Report raceSummaryReport() {
-        RecordReports summaryReport = new RecordReports();
-        for (RacingVehicle vehicle : vehicles) {
-            summaryReport.addReport(recordOf(vehicle));
+    private Records raceSummaryReport() {
+        Records records = new Records();
+        for (RacingCar racingCar : racingCars) {
+            records.addRecord(recordOf(racingCar));
         }
 
-        return summaryReport;
+        return records;
     }
 
-    private Report recordOf(RacingVehicle vehicle) {
-        return vehicle.race();
+    private Record recordOf(RacingCar racingCar) {
+        return racingCar.race();
     }
 }

@@ -1,4 +1,4 @@
-package racingcar.model.report;
+package racingcar.model.record;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import racingcar.model.racingvehicle.wrapper.CarName;
 import racingcar.model.engine.wrapper.ForwardDistance;
 
-public class RecordReportTest {
+public class RecordTest {
 
     @Test
     @DisplayName("자동차 이름이 lee, 한 번도 전진 안했을 시 => lee : ")
@@ -15,7 +15,7 @@ public class RecordReportTest {
         CarName carName = nameOf("lee");
         ForwardDistance distance = nCountDistance(0);
 
-        RecordReport report = new RecordReport(carName, distance);
+        Record report = new Record(carName, distance);
         Assertions.assertThat(report.report()).isEqualTo(expected);
     }
 
@@ -26,7 +26,7 @@ public class RecordReportTest {
         CarName carName = nameOf("lee");
         ForwardDistance distance = nCountDistance(1);
 
-        RecordReport report = new RecordReport(carName, distance);
+        Record report = new Record(carName, distance);
         Assertions.assertThat(report.report()).isEqualTo(expected);
     }
 
@@ -37,7 +37,7 @@ public class RecordReportTest {
         CarName carName = nameOf("kim");
         ForwardDistance distance = nCountDistance(6);
 
-        RecordReport report = new RecordReport(carName, distance);
+        Record report = new Record(carName, distance);
         Assertions.assertThat(report.report()).isEqualTo(expected);
     }
 

@@ -23,11 +23,15 @@ public class LapsGenerator {
     private static Laps laps() {
         Laps laps = null;
         try {
-            laps = new Laps(Console.readLine());
+            laps = new Laps(receiveFromUser());
         } catch (IllegalArgumentException e) {
             Display.printExceptionMessage(e);
         }
         return laps;
+    }
+
+    private static String receiveFromUser() {
+        return Console.readLine();
     }
 
     private static void printSetLapsMessage() {

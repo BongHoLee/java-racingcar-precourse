@@ -3,12 +3,11 @@ package racingcar.model.racingvehicle.vehicle;
 import camp.nextstep.edu.missionutils.Randoms;
 import racingcar.model.engine.Engine;
 import racingcar.model.engine.Rpm;
-import racingcar.model.racingvehicle.wrapper.CarName;
 import racingcar.model.engine.wrapper.ForwardDistance;
-import racingcar.model.report.RecordReport;
-import racingcar.model.report.Report;
+import racingcar.model.racingvehicle.wrapper.CarName;
+import racingcar.model.record.Record;
 
-public class RacingCar implements RacingVehicle {
+public class RacingCar{
 
     private final CarName carName;
     private final Engine engine;
@@ -18,11 +17,11 @@ public class RacingCar implements RacingVehicle {
         this.engine = engine;
     }
 
-    public Report race() {
-        return new RecordReport(carName, hitRpm());
+    public Record race() {
+        return new Record(carName, forwardDistance());
     }
 
-    private ForwardDistance hitRpm() {
+    private ForwardDistance forwardDistance() {
         return engine.hit(rpm());
     }
 
