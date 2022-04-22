@@ -5,7 +5,9 @@ public enum Error {
     NOT_VALID_LEVEL("[ERROR] Rpm Level은 0 ~ 9사이의 숫자만 가능합니다."),
     NOT_VALID_LAPS("[ERROR] 유효하지 않은 Laps 입니다."),
     HAS_NOT_NEXT_LAP("[ERROR] 모든 Lap을 수행하였습니다."),
-    HAS_NOT_NEXT_LINEUP("[ERROR] 모든 LineUp이 배정되었습니다.");
+    HAS_NOT_NEXT_LINEUP("[ERROR] 모든 LineUp이 배정되었습니다."),
+    HAS_NOT_NEXT_RECORD("[ERROR] Record가 존재하지 않습니다.");
+
 
     private final String message;
 

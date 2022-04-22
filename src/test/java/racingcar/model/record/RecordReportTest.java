@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racingcar.model.engine.wrapper.ForwardDistance;
 import racingcar.model.racingvehicle.wrapper.CarName;
+import racingcar.view.RecordReport;
 
 public class RecordReportTest {
 

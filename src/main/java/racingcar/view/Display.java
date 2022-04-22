@@ -1,6 +1,5 @@
 package racingcar.view;
 
-import racingcar.model.record.RecordReport;
 import racingcar.model.record.Records;
 
 public class Display {
@@ -18,6 +17,10 @@ public class Display {
 
     public static void printEachLapsReport(Records records) {
         System.out.println(RecordReport.summaryForLab(records));
+    }
+
+    public static void printFinalRank(Records records) {
+
     }
 
     public static void printExceptionMessage(RuntimeException e) {

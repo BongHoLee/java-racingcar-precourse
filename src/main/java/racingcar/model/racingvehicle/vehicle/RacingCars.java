@@ -2,7 +2,6 @@ package racingcar.model.racingvehicle.vehicle;
 
 import java.util.List;
 import racingcar.model.record.Record;
-import racingcar.model.record.RecordReport;
 import racingcar.model.record.Records;
 
 public class RacingCars {

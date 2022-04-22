@@ -1,4 +1,6 @@
-package racingcar.model.record;
+package racingcar.view;
+
+import racingcar.model.record.Records;
 
 public class RecordReport {
     private static final String NEXT_LINE = "\n";

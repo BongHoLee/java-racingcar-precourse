@@ -17,12 +17,4 @@ public class Record {
     public String report() {
         return carName + COLON + distance;
     }
-
-    public CarName getCarName() {
-        return this.carName;
-    }
-
-    public ForwardDistance getDistance() {
-        return this.distance;
-    }
 }
