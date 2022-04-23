@@ -1,4 +1,4 @@
-package racingcar.model.racingvehicle.wrapper;
+package racingcar.model.car;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racingcar.error.Error;
+import racingcar.model.car.LineUp;
 
 public class LineUpTest {
 

@@ -1,9 +1,8 @@
-package racingcar.controller.racing;
+package racingcar.controller;
 
-import racingcar.controller.racing.wrapper.Laps;
 import racingcar.generator.LapsGenerator;
 import racingcar.generator.RacingCarsGenerator;
-import racingcar.model.racingvehicle.vehicle.RacingCars;
+import racingcar.model.car.RacingCars;
 import racingcar.model.record.Records;
 import racingcar.view.Display;
 

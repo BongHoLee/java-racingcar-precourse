@@ -1,4 +1,4 @@
-package racingcar.model.racingvehicle.vehicle;
+package racingcar.model.car;
 
 import java.util.List;
 import racingcar.model.record.Record;

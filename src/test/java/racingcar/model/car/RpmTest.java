@@ -1,4 +1,4 @@
-package racingcar.model.engine;
+package racingcar.model.car;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;

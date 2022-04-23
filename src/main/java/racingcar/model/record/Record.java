@@ -1,7 +1,7 @@
 package racingcar.model.record;
 
-import racingcar.model.racingvehicle.wrapper.CarName;
-import racingcar.model.engine.wrapper.ForwardDistance;
+import racingcar.model.car.CarName;
+import racingcar.model.car.ForwardDistance;
 
 public class Record {
 

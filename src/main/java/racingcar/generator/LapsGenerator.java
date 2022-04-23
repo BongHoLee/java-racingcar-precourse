@@ -1,7 +1,7 @@
 package racingcar.generator;
 
 import camp.nextstep.edu.missionutils.Console;
-import racingcar.controller.racing.wrapper.Laps;
+import racingcar.controller.Laps;
 import racingcar.view.Display;
 
 public class LapsGenerator {

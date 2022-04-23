@@ -3,8 +3,9 @@ package racingcar.model.record;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import racingcar.model.racingvehicle.wrapper.CarName;
-import racingcar.model.engine.wrapper.ForwardDistance;
+import racingcar.model.car.CarName;
+import racingcar.model.car.ForwardDistance;
+import racingcar.model.car.Rpm;
 
 public class RecordTest {
 
@@ -44,7 +45,7 @@ public class RecordTest {
     private ForwardDistance nCountDistance(int n) {
         ForwardDistance forwardDistance = new ForwardDistance();
         for (int i = 0; i < n; i ++) {
-            forwardDistance.increase();
+            forwardDistance.hitFrom(new Rpm(5));
         }
 
         return forwardDistance;

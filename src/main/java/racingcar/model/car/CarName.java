@@ -1,4 +1,4 @@
-package racingcar.model.racingvehicle.wrapper;
+package racingcar.model.car;
 
 import racingcar.error.Error;
 

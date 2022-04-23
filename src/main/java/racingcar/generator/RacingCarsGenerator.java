@@ -3,11 +3,10 @@ package racingcar.generator;
 import camp.nextstep.edu.missionutils.Console;
 import java.util.ArrayList;
 import java.util.List;
-import racingcar.model.engine.Engine;
-import racingcar.model.racingvehicle.vehicle.RacingCar;
-import racingcar.model.racingvehicle.vehicle.RacingCars;
-import racingcar.model.racingvehicle.wrapper.CarName;
-import racingcar.model.racingvehicle.wrapper.LineUp;
+import racingcar.model.car.CarName;
+import racingcar.model.car.LineUp;
+import racingcar.model.car.RacingCar;
+import racingcar.model.car.RacingCars;
 import racingcar.view.Display;
 
 public class RacingCarsGenerator {
@@ -49,8 +48,7 @@ public class RacingCarsGenerator {
 
     private static RacingCar racingCar(LineUp lineUp) {
         return new RacingCar(
-                new CarName(lineUp.next()),
-                new Engine()
+                new CarName(lineUp.next())
         );
     }
 }
