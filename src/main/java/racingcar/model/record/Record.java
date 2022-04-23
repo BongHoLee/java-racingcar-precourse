@@ -15,6 +15,14 @@ public class Record {
     }
 
     public String report() {
-        return carName + COLON + distance;
+        return carName() + COLON + distance();
+    }
+
+    private String carName() {
+        return carName.name();
+    }
+
+    private String distance() {
+        return distance.distance();
     }
 }

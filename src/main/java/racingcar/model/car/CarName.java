@@ -26,8 +26,7 @@ public class CarName {
         return carName.length() > MAX_LENGTH || carName.length() < MIN_LENGTH;
     }
 
-    @Override
-    public String toString() {
+    public String name() {
         return this.carName;
     }
 }
