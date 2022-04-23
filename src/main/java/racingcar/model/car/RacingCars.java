@@ -1,7 +1,6 @@
 package racingcar.model.car;
 
 import java.util.List;
-import racingcar.model.record.Record;
 import racingcar.model.record.Records;
 
 public class RacingCars {
@@ -11,20 +10,18 @@ public class RacingCars {
         this.racingCars = racingCars;
     }
 
-    public Records race() {
-        return raceSummaryReport();
+    public void race() {
+        for (RacingCar racingCar : racingCars) {
+            racingCar.race();
+        }
     }
 
-    private Records raceSummaryReport() {
+    public Records records() {
         Records records = new Records();
         for (RacingCar racingCar : racingCars) {
-            records.addRecord(recordOf(racingCar));
+            records.addRecord(racingCar.record());
         }
 
         return records;
-    }
-
-    private Record recordOf(RacingCar racingCar) {
-        return racingCar.race();
     }
 }

@@ -3,9 +3,9 @@ package racingcar.model.record;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import racingcar.model.car.CarName;
-import racingcar.model.car.ForwardDistance;
-import racingcar.model.car.Rpm;
+import racingcar.model.car.name.CarName;
+import racingcar.model.car.distance.ForwardDistance;
+import racingcar.model.car.distance.Rpm;
 
 public class RecordTest {
 
@@ -14,7 +14,7 @@ public class RecordTest {
     void 자동차이름이_lee이고_한번도_전진하지않은경우_정상출력_테스트() {
         String expected = "lee : ";
         CarName carName = nameOf("lee");
-        ForwardDistance distance = nCountDistance(0);
+        ForwardDistance distance = new ForwardDistance(0);
 
         Record report = new Record(carName, distance);
         Assertions.assertThat(report.report()).isEqualTo(expected);
@@ -25,7 +25,7 @@ public class RecordTest {
     void 자동차이름이_lee이고_한번_전진한경우_정상출력_테스트() {
         String expected = "lee : -";
         CarName carName = nameOf("lee");
-        ForwardDistance distance = nCountDistance(1);
+        ForwardDistance distance = new ForwardDistance(1);
 
         Record report = new Record(carName, distance);
         Assertions.assertThat(report.report()).isEqualTo(expected);
@@ -36,20 +36,12 @@ public class RecordTest {
     void 자동차이름이_kim이고_여섯번_전진한경우_정상출력_테스트() {
         String expected = "kim : ------";
         CarName carName = nameOf("kim");
-        ForwardDistance distance = nCountDistance(6);
+        ForwardDistance distance = new ForwardDistance(6);
 
         Record report = new Record(carName, distance);
         Assertions.assertThat(report.report()).isEqualTo(expected);
     }
 
-    private ForwardDistance nCountDistance(int n) {
-        ForwardDistance forwardDistance = new ForwardDistance();
-        for (int i = 0; i < n; i ++) {
-            forwardDistance.hitFrom(new Rpm(5));
-        }
-
-        return forwardDistance;
-    }
 
     private CarName nameOf(String name) {
         return new CarName(name);

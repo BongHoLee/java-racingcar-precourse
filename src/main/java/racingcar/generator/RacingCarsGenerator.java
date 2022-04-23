@@ -3,8 +3,7 @@ package racingcar.generator;
 import camp.nextstep.edu.missionutils.Console;
 import java.util.ArrayList;
 import java.util.List;
-import racingcar.model.car.CarName;
-import racingcar.model.car.LineUp;
+import racingcar.model.car.name.CarNames;
 import racingcar.model.car.RacingCar;
 import racingcar.model.car.RacingCars;
 import racingcar.view.Display;
@@ -32,23 +31,21 @@ public class RacingCarsGenerator {
         return racingCars;
     }
 
-    private static LineUp lineUp() {
+    private static CarNames lineUp() {
         Display.printLineUpMessage();
-        return new LineUp(Console.readLine());
+        return new CarNames(Console.readLine());
     }
 
-    private static RacingCars enterRacingCars(LineUp lineUp) {
+    private static RacingCars enterRacingCars(CarNames carNames) {
         List<RacingCar> racingCarList = new ArrayList<>();
-        while (lineUp.hasNext()) {
-            racingCarList.add(racingCar(lineUp));
+        while (carNames.hasNext()) {
+            racingCarList.add(racingCar(carNames));
         }
 
         return new RacingCars(racingCarList);
     }
 
-    private static RacingCar racingCar(LineUp lineUp) {
-        return new RacingCar(
-                new CarName(lineUp.next())
-        );
+    private static RacingCar racingCar(CarNames carNames) {
+        return new RacingCar(carNames.next());
     }
 }

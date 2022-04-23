@@ -1,6 +1,9 @@
 package racingcar.model.car;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import racingcar.model.car.distance.ForwardDistance;
+import racingcar.model.car.distance.Rpm;
+import racingcar.model.car.name.CarName;
 import racingcar.model.record.Record;
 
 public class RacingCar{
@@ -13,9 +16,12 @@ public class RacingCar{
         this.forwardDistance = new ForwardDistance();
     }
 
-    public Record race() {
-        hitRpm();
+    public Record record() {
         return new Record(carName, forwardDistance);
+    }
+
+    public void race() {
+        hitRpm();
     }
 
     private void hitRpm() {

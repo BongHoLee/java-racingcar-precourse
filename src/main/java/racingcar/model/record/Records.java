@@ -1,25 +1,83 @@
 package racingcar.model.record;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
-import racingcar.error.Error;
+import java.util.Queue;
 
 public class Records {
-    private int current_idx = 0;
+    private static final String NEXT_LINE = "\n";
+    private static final String RANKER_DELIMITER = ",";
+    private static final int FIRST_RECORD_IDX = 0;
     private final List<Record> records = new ArrayList<>();
 
     public void addRecord(Record record) {
-        records.add(record);
+        this.records.add(record);
     }
 
-    public boolean hasNext() {
-        return current_idx < records.size();
-    }
-
-    public Record next() {
-        if (!hasNext()) {
-            throw new IllegalStateException(Error.HAS_NOT_NEXT_RECORD.message());
+    public String recordsSheet() {
+        StringBuilder sheet = new StringBuilder();
+        for (Record record : records) {
+            sheet
+                    .append(record.report())
+                    .append(NEXT_LINE);
         }
-        return records.get(current_idx++);
+
+        return sheet.toString();
+    }
+
+    public String rankSheet() {
+        StringBuilder sheet = new StringBuilder();
+        Queue<Record> rankers = rankers();
+        while (!rankers.isEmpty()) {
+            appendRankerToSheet(sheet, rankers.poll(), rankers.isEmpty());
+        }
+
+        return sheet.toString();
+    }
+
+    private Queue<Record> rankers() {
+        Queue<Record> rankerQueue = new LinkedList<>();
+        for (Record record : records) {
+            pushIfFirstRecord(record, rankerQueue);
+            rank(record, rankerQueue);
+        }
+
+        return rankerQueue;
+    }
+
+    private void pushIfFirstRecord(Record record, Queue<Record> rankerQueue) {
+        if (rankerQueue.isEmpty()) {
+            rankerQueue.offer(record);
+        }
+    }
+
+    private void rank(Record record, Queue<Record> rankerQueue) {
+        if (rankerQueue.peek() != record) {
+            higherProcess(record, rankerQueue);
+            sameProcess(record, rankerQueue);
+        }
+    }
+
+    private void higherProcess(Record record, Queue<Record> rankerQueue) {
+        Record target = rankerQueue.peek();
+        if (record.isHigherThan(target)) {
+            rankerQueue.poll();
+            rankerQueue.offer(record);
+        }
+    }
+
+    private void sameProcess(Record record, Queue<Record> rankerQueue) {
+        Record target = rankerQueue.peek();
+        if (record.isSameWith(target)) {
+            rankerQueue.offer(record);
+        }
+    }
+
+    private void appendRankerToSheet(StringBuilder sheet, Record ranker, boolean lastRanker) {
+        sheet.append(ranker.carName());
+        if (!lastRanker) {
+            sheet.append(RANKER_DELIMITER);
+        }
     }
 }

@@ -1,4 +1,4 @@
-package racingcar.controller.racing.wrapper;
+package racingcar.controller.racing;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;

@@ -20,12 +20,17 @@ public class Racing {
         return LapsGenerator.generate();
     }
 
-    private void raceFor(RacingCars racingCars, Laps laps) {
-        Records records = new Records();
+    private void raceFor(RacingCars cars, Laps laps) {
         while (laps.hasNext()) {
-            records = racingCars.race();
-            Display.printEachLapsReport(records);
             laps.lapCountDown();
+            cars.race();
+            Display.printEachLapsReport(cars.records());
         }
+
+        displayFinalRank(cars.records());
+    }
+
+    private void displayFinalRank(Records records) {
+        Display.printFinalRank(records);
     }
 }
