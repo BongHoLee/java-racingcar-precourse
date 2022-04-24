@@ -15,10 +15,6 @@ public class RacingCar{
         this.forwardDistance = new ForwardDistance();
     }
 
-    public Record record() {
-        return new Record(carName, forwardDistance);
-    }
-
     public void race() {
         hitRpm();
     }
@@ -33,5 +29,9 @@ public class RacingCar{
                         Rpm.MinRpmLevel(),
                         Rpm.MaxRpmLevel()
                 ));
+    }
+
+    public Record record() {
+        return new Record(carName, forwardDistance);
     }
 }
