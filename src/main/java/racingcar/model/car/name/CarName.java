@@ -13,7 +13,7 @@ public class CarName {
     }
 
     private void validationCheck(String carName) {
-        if (isNull(carName) || isLongerThanMaxLength(carName)) {
+        if (isNull(carName) || isOutOfRange(carName)) {
             throw new IllegalArgumentException(Error.NOT_VALID_CAR_NAME.message());
         }
     }
@@ -22,7 +22,7 @@ public class CarName {
         return carName == null;
     }
 
-    private boolean isLongerThanMaxLength(String carName) {
+    private boolean isOutOfRange(String carName) {
         return carName.length() > MAX_LENGTH || carName.length() < MIN_LENGTH;
     }
 
