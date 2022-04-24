@@ -52,25 +52,25 @@ public class Records {
         }
     }
 
-    private void rank(Record nextRecord, Queue<Record> rankerQueue) {
-        if (rankerQueue.peek() != nextRecord) {
-            higherProcess(nextRecord, rankerQueue);
-            sameProcess(nextRecord, rankerQueue);
+    private void rank(Record currentRecord, Queue<Record> rankerQueue) {
+        if (rankerQueue.peek() != currentRecord) {
+            higherProcess(currentRecord, rankerQueue);
+            sameProcess(currentRecord, rankerQueue);
         }
     }
 
-    private void higherProcess(Record nextRecord, Queue<Record> rankerQueue) {
+    private void higherProcess(Record currentRecord, Queue<Record> rankerQueue) {
         Record lastRecord = rankerQueue.peek();
-        if (nextRecord.isHigherThan(lastRecord)) {
+        if (currentRecord.isHigherThan(lastRecord)) {
             rankerQueue.poll();
-            rankerQueue.offer(nextRecord);
+            rankerQueue.offer(currentRecord);
         }
     }
 
-    private void sameProcess(Record nextRecord, Queue<Record> rankerQueue) {
+    private void sameProcess(Record currentRecord, Queue<Record> rankerQueue) {
         Record lastRecord = rankerQueue.peek();
-        if (nextRecord.isSameWith(lastRecord)) {
-            rankerQueue.offer(nextRecord);
+        if (currentRecord.isSameWith(lastRecord)) {
+            rankerQueue.offer(currentRecord);
         }
     }
 
