@@ -24,10 +24,14 @@ public class Racing {
         while (laps.hasNext()) {
             laps.lapCountDown();
             cars.race();
-            Display.printEachLapsReport(cars.records());
+            displayEachLaps(cars.records());
         }
 
         displayFinalRank(cars.records());
+    }
+
+    private void displayEachLaps(Records records) {
+        Display.printEachLapsReport(records);
     }
 
     private void displayFinalRank(Records records) {
