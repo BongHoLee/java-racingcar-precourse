@@ -7,7 +7,6 @@ import racingcar.model.car.name.CarName;
 import racingcar.model.record.Record;
 
 public class RacingCar{
-
     private final CarName carName;
     private final ForwardDistance forwardDistance;
 

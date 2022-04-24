@@ -37,7 +37,7 @@ public class Laps {
 
     public void lapCountDown() {
         if (!hasNext()) {
-            throw  new IllegalStateException(Error.HAS_NOT_NEXT_LAP.message());
+            throw new IllegalStateException(Error.HAS_NOT_NEXT_LAP.message());
         }
 
         laps--;

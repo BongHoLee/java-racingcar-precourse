@@ -7,7 +7,6 @@ public enum Error {
     HAS_NOT_NEXT_LAP("[ERROR] 모든 Lap을 수행하였습니다."),
     IS_EMPTY_STATUS("[ERROR] CarName이 존재하지 않습니다.");
 
-
     private final String message;
 
     Error(String message) {

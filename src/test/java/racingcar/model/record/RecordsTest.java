@@ -1,7 +1,8 @@
 package racingcar.model.record;
 
 
-import org.assertj.core.api.Assertions;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racingcar.model.car.distance.ForwardDistance;
@@ -18,6 +19,6 @@ public class RecordsTest {
         records.addRecord(new Record(new CarName("lee"), new ForwardDistance(3)));
         records.addRecord(new Record(new CarName("kim"), new ForwardDistance(1)));
         records.addRecord(new Record(new CarName("ho"), new ForwardDistance(2)));
-        Assertions.assertThat(records.rankSheet()).isEqualTo("lee");
+        assertThat(records.rankSheet()).isEqualTo("lee");
     }
 }

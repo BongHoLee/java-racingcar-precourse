@@ -6,7 +6,7 @@ public class ForwardDistance {
     private static final int CAN_MOVE_STANDARD = 4;
     private final StringBuilder currentDistance = new StringBuilder();
 
-    public ForwardDistance(){
+    public ForwardDistance() {
         this(INIT_DISTANCE);
     }
 

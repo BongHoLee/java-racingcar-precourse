@@ -3,10 +3,8 @@ package racingcar.model.record;
 import racingcar.model.car.name.CarName;
 import racingcar.model.car.distance.ForwardDistance;
 
-public class Record{
-
+public class Record {
     private static final String COLON = " : ";
-
     private final CarName carName;
     private final ForwardDistance distance;
 
